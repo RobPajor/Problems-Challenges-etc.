@@ -1,4 +1,4 @@
-## V.1.0.1 Code now works for 5 digit numbers
+## V.1.1.0 Code now fulfills all requirements and works for 6 digit numbers, Codewars kata has been passed
 
 numberDict = {0:"zero", 1: "one", 2: "two", 3:"three", 4:"four", 5:"five", 6:"six", 7:"seven", 8:"eight", 9:"nine", 10:"ten", 11: "eleven",
        12: "twelve", 13: "thirteen", 14: "fourteen", 15: "fifteen", 16: "sixteen", 17: "seventeen",
@@ -24,6 +24,9 @@ def number2words(n):
     
     if len(str(n)) == 5:
         return length_five(n)
+    
+    if len(str(n)) == 6:
+        return lenght_six(n)
 
           
 def lenght_two(n):
@@ -65,11 +68,16 @@ def length_four(n):
 def length_five(n):
     numberString = str(n)
     if length_three(int(numberString[2:5])) != "":
-        tenthousands = lenght_two(int(numberString[0:2])) + " thousand " + length_three(int(numberString[2:5]))
+        tenThousands = lenght_two(int(numberString[0:2])) + " thousand " + length_three(int(numberString[2:5]))
     else:
-        tenthousands = lenght_two(int(numberString[0:2])) + "thousand"
-    return tenthousands
+        tenThousands = lenght_two(int(numberString[0:2])) + "thousand"
+    return tenThousands
 
-    
-print(number2words(55543))
-    
+def lenght_six(n):
+    numberString = str(n)
+    if length_three(int(numberString[3:6])) != "":
+        hundredThousands = length_three(int(numberString[0:3])) + " thousand " + length_three(int(numberString[3:6]))
+    else:
+        hundredThousands = length_three(int(numberString[0:3])) + "thousand"
+    return hundredThousands
+
