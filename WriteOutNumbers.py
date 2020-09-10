@@ -6,6 +6,11 @@ numberDict = {0:"zero", 1: "one", 2: "two", 3:"three", 4:"four", 5:"five", 6:"si
        80: "eighty", 90: "ninety"}
 
 def number2words(n):
+     """ 
+     Different functions for numbers of different lengths 
+     Input: any number up to 6 digits
+     Output: the number written out 
+     """
     
     if len(str(n)) == 0:
         return None
@@ -30,13 +35,14 @@ def number2words(n):
 
           
 def lenght_two(n):
+    """ Write out any number with 2 digits """
     if n == 0:
         return ""
     numberString = str(n)
     sol = ""
     if n < 20:
         return numberDict[n]
-    sol = sol + numberDict[int(numberString[0] + "0")]
+    sol = sol + numberDict[int(numberString[0] + "0")]                # added 0 to the string, for example 1 -> 10, so sol will be ten and not one
     if numberString[1] != "0" and numberString[0] != "0" and n > 20:
         sol += "-" + numberDict[int(numberString[1])]
     return sol
@@ -51,7 +57,7 @@ def length_three(n):
         return lenght_two(n)
     
     
-    if lenght_two(int(numberString[1:3])) != "":
+    if lenght_two(int(numberString[1:3])) != "":                                                                 # if statement is needed to make sure we don't get a string with a space on the end 
         hundreds = numberDict[int(numberString[0])] + " hundred " + lenght_two(int(numberString[1:3]))
     if lenght_two(int(numberString[1:3])) == "":
         hundreds = numberDict[int(numberString[0])] + " hundred" + lenght_two(int(numberString[1:3]))
