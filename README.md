@@ -1,4 +1,4 @@
-# Problems-Challenges-etc.
+# [Problems-Challenges-etc](https://github.com/RobPajor/Problems-Challenges-etc./blob/master/WriteOutNumbers.py)
 Diverse solutions for different coding problems, riddles from sites like codewars, personal projects, etc
 
 
